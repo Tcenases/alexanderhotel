@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="fonts/flaticon/font/flaticon.css"> 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/global.css">
+    <script src="js/index.js"></script>
     <title>Alexander</title>
 </head>
 <body>
@@ -57,11 +58,11 @@
             <div class="booking_form">
                 <div class="form_element">
                     <label for="check-in">Check-in</label>
-                    <input type="date" name="check-in" id="check-in">
+                    <input type="date" name="check-in" id="check-in" min="2019-05-01" max="2021-01-01" required>
                 </div>
                 <div class="form_element">
                     <label for="check-out">Check-out</label>
-                    <input type="date" name="check-out" id="check-out">
+                    <input type="date" name="check-out" id="check-out" min="" max="" required>
                 </div>
                 <div class="form_element">
                     <label for="adults">Adults</label>
@@ -75,6 +76,7 @@
                 <div class="form_element">
                     <label for="children">Children</label>
                     <select name="children" id="children">
+                        <option value="0">-</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -82,7 +84,7 @@
                     </select>
                 </div>
                 <div class="form_element">
-                    <button class="check_button">Check availability</button>
+                    <button id="check_button" class="check_button">Check availability</button>
                 </div>
             </div>
             <div class="main_block">

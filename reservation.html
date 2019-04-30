@@ -50,12 +50,12 @@
                     <p class="step_name">Check Availability</p>
                     <div class="step_bar"></div>
                 </div>
-                <div class="step completed_step">
+                <div class="step">
                     <div class="step_number ">2</div>
                     <p class="step_name">Choose Room</p>
                     <div class="step_bar"></div>
                 </div>
-                <div class="step failed_step">
+                <div class="step">
                     <div class="step_number">3</div>
                     <p class="step_name">Make a Reservation</p>
                     <div class="step_bar"></div>
@@ -70,7 +70,55 @@
     </section>
     <section class="step_actions">
         <div class="container">
-            test
+            <h2 class="step_header">Room Reservation</h2>
+            <div class="step_container">
+                <div class="form_group">
+                    <div class="form_element">
+                        <label for="check-in">Check-in</label>
+                        <input type="date" name="check-in" id="check-in">
+                    </div>
+                    <div class="form_element">
+                        <label for="check-out">Check-out</label>
+                        <input type="date" name="check-out" id="check-out">
+                    </div>
+                </div>
+                <div class="form_group">
+                    <div class="form_element">
+                        <label for="adults">Adults</label>
+                        <select name="adults" id="adults">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4+">4+</option>
+                        </select>
+                    </div>
+                    <div class="form_element">
+                        <label for="children">Children</label>
+                        <select name="children" id="children">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4+">4+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_group">
+                    <div class="form_element">
+                        <label for="room_type">Room Type(optional)</label>
+                        <select name="room_type" id="room_type">
+                            <option value="all">All</option>
+                            <option value="room_type_1">room_type_1</option>
+                            <option value="room_type_2">room_type_2</option>
+                            <option value="room_type_3">room_type_3</option>
+                        </select>
+                    </div>
+                    <div class="form_element">
+                        <button class="check_button">Check availability</button>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
         </div>
     </section>
     <footer>

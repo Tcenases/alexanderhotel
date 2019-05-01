@@ -1,13 +1,5 @@
 window.addEventListener("load", init, false);
 
-//method to get date in "yyyy-mm-dd" format
-Date.prototype.yyyymmdd = function() {
-    var yyyy = this.getFullYear();
-    var mm = this.getMonth() < 9 ? "-0" + (this.getMonth() + 1) : "-" + (this.getMonth() + 1);
-    var dd  = this.getDate() < 10 ? "-0" + this.getDate() : "-" + this.getDate();
-    return yyyy + mm + dd;
-};
-
 function init() {
 
     document.getElementById("check_button").addEventListener("click", startReservationProcess, false);

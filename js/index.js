@@ -10,7 +10,7 @@ function init() {
         var dd  = this.getDate() < 10 ? "-0" + this.getDate() : "-" + this.getDate();
         return yyyy + mm + dd;
     };
-    
+
     function startReservationProcess() {
         var startDate = document.getElementById("check-in");
         var endDate = document.getElementById("check-out");
@@ -35,7 +35,7 @@ function init() {
                 var newUrl = String.prototype.replace.call(url, "index.html", "reservation.html");
             }
             else {
-                newUrl = url + "/reservation.html";
+                newUrl = url.href + "/reservation.html";
             }
             window.location.replace(newUrl);
         };

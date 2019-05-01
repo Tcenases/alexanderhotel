@@ -46,12 +46,12 @@
     <section id="reservation-block" class="steps_section">
         <div class="container">
             <div class="steps_wrapper">
-                <div class="step current_step">
+                <div id="step1" class="step current_step">
                     <div class="step_number">1</div>
                     <p class="step_name">Check Availability</p>
                     <div class="step_bar"></div>
                 </div>
-                <div class="step">
+                <div id="step2" class="step">
                     <div class="step_number ">2</div>
                     <p class="step_name">Choose Room</p>
                     <div class="step_bar"></div>
@@ -96,6 +96,7 @@
                     <div class="form_element">
                         <label for="children">Children</label>
                         <select name="children" id="children">
+                            <option value="0">-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -108,19 +109,22 @@
                         <label for="room_type">Room Type(optional)</label>
                         <select name="room_type" id="room_type">
                             <option value="all">All</option>
-                            <option value="room_type_1">room_type_1</option>
-                            <option value="room_type_2">room_type_2</option>
-                            <option value="room_type_3">room_type_3</option>
+                            <option value="bachelor">Bachelor</option>
+                            <option value="doubleRoom">Double Room</option>
+                            <option value="family">Family Room</option>
+                            <option value="vip">VIP Room</option>
+                            <option value="presidental">Presidental Room</option>
                         </select>
                     </div>
                     <div class="form_element">
-                        <button class="check_button">Check availability</button>
+                        <button id="check-button" class="check_button">Check availability</button>
                     </div>
                 </div>
-                
             </div>
-            </div>
+            <p id="error_msg1" class="error_msg">The check-in date is wrong!</p>
+            <p id="error_msg2" class="error_msg">The check-out date is wrong!</p>
         </div>
+        <!-- </div> -->
     </section>
     <footer>
         <div class="container">

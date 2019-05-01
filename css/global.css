@@ -641,3 +641,17 @@ footer p {
     margin-bottom: 15px;
 }
 
+.invalid {
+    border: 2px solid red;
+    background-color: #c7192b98;
+}
+
+.error_msg {
+    width: 72%;
+    display: none;
+    margin: auto;
+    color: #dc3545;
+    font-size: 20px;
+    font-weight: bolder;
+}
+

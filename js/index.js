@@ -35,7 +35,8 @@ function init() {
                 var newUrl = String.prototype.replace.call(url, "index.html", "reservation.html");
             }
             else {
-                newUrl = url.href + "/reservation.html";
+                newUrl = url.href + "reservation.html";
+                alert(newUrl);
             }
             window.location.replace(newUrl);
         };

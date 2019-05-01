@@ -35,6 +35,8 @@ body {
     margin: auto;
     padding: 10px;
     justify-content: space-between;
+       /* for IE11 */
+    align-items: center;
     flex-wrap: wrap;
     z-index: 1;
 }
@@ -285,6 +287,11 @@ h2 {
     line-height: 1.6;
 }
 
+/* for IE 11 */
+.wrapper {
+    width: 100%;
+}
+
 .rooms_overview {
     display: flex;
     justify-content: space-between;
@@ -301,6 +308,13 @@ h2 {
 
 .room_preview img {
     width: 100%;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .room_preview img,
+    .menu_preview img { 
+        height: 50%;
+    }
 }
 
 .room_summary {
@@ -442,7 +456,6 @@ li.selected {
 .ad_section button {
     background: white;
     border: 2px solid white;
-    background: white;
     color: #999999;
     text-transform: uppercase;
     font-size: 14px;
@@ -623,3 +636,4 @@ footer p {
 .step_actions .form_element{
     margin-bottom: 15px;
 }
+

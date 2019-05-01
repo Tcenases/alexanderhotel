@@ -97,6 +97,26 @@ function init() {
         steps[0].classList.add("completed_step");
         steps[0].classList.remove("current_step");
         steps[1].classList.add("current_step");
+
+        var data;
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "server/data.json", true);
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState != 4) {
+                return;
+            };
+
+            if (xhr.status != 200) {
+                alert(xhr.status + ': ' + xhr.statusText);
+            } 
+            else {
+                data = JSON.parse(xhr.responseText);
+            };
+        };
     };
+
+    secondStep();
 
 };

@@ -655,3 +655,27 @@ footer p {
     font-weight: bolder;
 }
 
+.choose {
+    background: #28a745;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.2rem;
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.choose:hover {
+    background: white;
+    border: 2px solid green;
+    color: #28a745;
+}
+
+
+
+#step1_action {
+    display: none;
+}
+

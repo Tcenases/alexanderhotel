@@ -11,9 +11,6 @@ function init() {
         return yyyy + mm + dd;
     };
 
-    alert(window.location)
-
-
     function startReservationProcess() {
         var startDate = document.getElementById("check-in");
         var endDate = document.getElementById("check-out");
@@ -34,7 +31,12 @@ function init() {
             window.sessionStorage.adults = "";
             window.sessionStorage.children = "";
             var url = window.location;
-            var newUrl = String.prototype.replace.call(url, "index.html", "reservation.html");
+            if (String.prototype.indexOf.call(url, "index.html")) {
+                var newUrl = String.prototype.replace.call(url, "index.html", "reservation.html");
+            }
+            else {
+                newUrl = url + "reservation.html";
+            }
             window.location.replace(newUrl);
         };
     };

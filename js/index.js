@@ -31,12 +31,11 @@ function init() {
             window.sessionStorage.adults = "";
             window.sessionStorage.children = "";
             var url = window.location;
-            if (String.prototype.indexOf.call(url, "index.html")) {
+            if ((String.prototype.indexOf.call(url, "index.html")) > 0) {
                 var newUrl = String.prototype.replace.call(url, "index.html", "reservation.html");
             }
             else {
                 newUrl = url.href + "reservation.html";
-                alert(newUrl);
             }
             window.location.replace(newUrl);
         };

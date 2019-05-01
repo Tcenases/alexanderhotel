@@ -11,6 +11,7 @@ room1.facilities = {};
 room1.price = 156;
 room1.bookedPeriods = null;
 room1.featured = false;
+room1.image = "images/img_1.jpg";
 
 hotelRooms.push(room1);
 
@@ -25,6 +26,7 @@ room2.facilities = {};
 room2.price = 256;
 room2.bookedPeriods = null;
 room2.featured = false;
+room2.image = "images/img_2.jpg";
 
 hotelRooms.push(room2);
 
@@ -39,6 +41,7 @@ room3.facilities = {};
 room3.price = 456;
 room3.bookedPeriods = null;
 room3.featured = true;
+room3.image = "images/img_3.jpg";
 
 hotelRooms.push(room3);
 
@@ -46,13 +49,14 @@ var room4 = {};
 room4.name = null;
 room4.category = "VIP Room";
 room4.roomNumber = "104";
-room1.size = "60";
+room4.size = "60";
 room4.bedType = "Two beds";
 room4.maxPersons = "4";
 room4.facilities = {};
 room4.price = 676;
 room4.bookedPeriods = null;
 room4.featured = false;
+room4.image = "images/img_4.jpg";
 
 hotelRooms.push(room4);
 

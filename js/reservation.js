@@ -93,10 +93,14 @@ function init() {
     };
 
     function secondStep() {
+
+        document.getElementById("step1_action").style.display = "none";
+        document.getElementById("step2_action").style.display = "block";
         var steps = document.getElementsByClassName("step");
         steps[0].classList.add("completed_step");
         steps[0].classList.remove("current_step");
         steps[1].classList.add("current_step");
+
 
         var data;
         var xhr = new XMLHttpRequest();
@@ -113,10 +117,51 @@ function init() {
             } 
             else {
                 data = JSON.parse(xhr.responseText);
+                processResponse();
             };
         };
+
+
+        
+
+        function processResponse() {
+
+            var container = document.getElementById("rooms_overview");
+
+            for (var i = 0; i < data.length; i++) {
+                var elem = document.createElement("div");
+                elem.classList.add("room_preview")
+                var img = document.createElement("img");
+                img.src = data[i].image;
+                img.attributes.alt = "room_image";
+                // elem.appendChild(img);
+                var summary = document.createElement("div");
+                summary.id = "ID#" + data[i].roomNumber;
+                summary.classList.add("room_summary");
+                summary.innerHTML = "<h2 class='room_heading'>" + data[i].category + " (#"+ data[i].roomNumber +")</h2><p class='specs'><sup>$</sup><span class='price'>"+ data[i].price +"</span><sub>/per night</sub></p><p class='specs'><span class='specification'>Adults: </span>"+ data[i].maxPersons +"</p><p class='specs'><span class='specification'>Categories: </span>"+ data[i].category +"</p><p class='specs'><span class='specification'>Facilities: </span>Closet with hangers,HD flat-screen TV, Telephone</p><p class='specs'><span class='specification'>Size: </span>"+ data[i].size +"m<sup>2</sup></p><p class='specs'><span class='specification'>Bed Type: </span>"+ data[i].bedType +"</p><button class='choose'>Choose This Room</button>";
+                elem.appendChild(img);
+                elem.appendChild(summary);
+                container.appendChild(elem);
+                
+            };
+
+            container.addEventListener("click", roomWasChosed);
+        };   
+
+        function roomWasChosed(e) {
+            window.sessionStorage.roomID = e.target.parentElement.id;
+            window.sessionStorage.flag = "step2"
+            thirdStep();
+        };
+
+
     };
 
-    secondStep();
-
+    function thirdStep() {
+        document.getElementById("step2_action").style.display = "none";
+        var steps = document.getElementsByClassName("step");
+        steps[1].classList.add("completed_step");
+        steps[1].classList.remove("current_step");
+        steps[2].classList.add("current_step");
+    };
 };

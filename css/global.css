@@ -301,13 +301,15 @@ h2 {
     justify-content: space-between;
     /* for IE11 */
     width: 100%; 
+    flex-wrap: wrap;
 }
 
 .room_preview {
     width: 32%;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2)
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
 .room_preview img {
@@ -675,7 +677,7 @@ footer p {
 
 
 
-#step1_action {
+#step2_action {
     display: none;
 }
 

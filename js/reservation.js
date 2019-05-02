@@ -19,7 +19,7 @@ function init() {
         if (index > 0) {
             url = url.substring(0, index);
         };
-        window.location.replace(url + "#reservation-block");
+        window.location.replace(url + "#reserv");
     };
 
     document.getElementById("check-button").addEventListener("click", firstStep);
@@ -142,26 +142,107 @@ function init() {
                 elem.appendChild(img);
                 elem.appendChild(summary);
                 container.appendChild(elem);
-                
             };
 
             container.addEventListener("click", roomWasChosed);
         };   
 
         function roomWasChosed(e) {
-            window.sessionStorage.roomID = e.target.parentElement.id;
-            window.sessionStorage.flag = "step2"
-            thirdStep();
+            if (e.target.classList.contains("choose")){
+                window.sessionStorage.roomID = e.target.parentElement.id;
+                window.sessionStorage.flag = "step2"
+                thirdStep();
+            };
         };
 
 
     };
 
     function thirdStep() {
+        //changing step_vies
         document.getElementById("step2_action").style.display = "none";
+        document.getElementById("step3_action").style.display = "block";
         var steps = document.getElementsByClassName("step");
         steps[1].classList.add("completed_step");
         steps[1].classList.remove("current_step");
         steps[2].classList.add("current_step");
+
+        // getting updated info from server
+        var data;
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "server/data.json", true);
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState != 4) {
+                return;
+            };
+
+            if (xhr.status != 200) {
+                alert(xhr.status + ': ' + xhr.statusText);
+            } 
+            else {
+                data = JSON.parse(xhr.responseText);
+                continueReservation();
+            };
+        };
+
+        var chosenIndex;
+
+        function continueReservation() {
+            for (var i = 0; i < data.length; i++) {
+                if (window.sessionStorage.roomID.indexOf(data[i].roomNumber) > 0) {
+                    chosenIndex = i;
+                };
+            };
+        
+
+            var container = document.getElementById("step3_action").children[0];
+            var elem = document.createElement("div");
+            elem.classList.add("room_preview")
+            var img = document.createElement("img");
+            img.src = data[chosenIndex].image;
+            img.attributes.alt = "room_image";
+            // elem.appendChild(img);
+            var summary = document.createElement("div");
+            // summary.id = "ID#" + data[i].roomNumber;
+            summary.classList.add("room_summary");
+            summary.innerHTML = "<h2 class='room_heading'>" + data[chosenIndex].category + " (#"+ data[chosenIndex].roomNumber +")</h2><p class='specs'><sup>$</sup><span class='price'>"+ data[chosenIndex].price +"</span><sub>/per night</sub></p><p class='specs'><span class='specification'>Adults: </span>"+ data[chosenIndex].maxPersons +"</p><p class='specs'><span class='specification'>Categories: </span>"+ data[chosenIndex].category +"</p><p class='specs'><span class='specification'>Facilities: </span>Closet with hangers,HD flat-screen TV, Telephone</p><p class='specs'><span class='specification'>Size: </span>"+ data[chosenIndex].size +"m<sup>2</sup></p><p class='specs'><span class='specification'>Bed Type: </span>"+ data[chosenIndex].bedType +"</p>";
+            elem.appendChild(img);
+            elem.appendChild(summary);
+            container.appendChild(elem);
+
+            var b = document.getElementById("reserv_button");
+            b.addEventListener("click", prepareForStep4);
+
+            function prepareForStep4() {
+                fourthStep();
+            };
+
+        };
+
     };
+
+
+    function fourthStep() {
+        document.getElementById("step3_action").style.display = "none";
+        document.getElementById("step4_action").style.display = "block";
+        var steps = document.getElementsByClassName("step");
+        steps[2].classList.add("completed_step");
+        steps[2].classList.remove("current_step");
+        steps[3].classList.add("current_step");
+
+        var b = document.getElementById("confirm_button");
+        b.addEventListener("click", confirmed);
+
+    };
+
+    function confirmed() {
+        document.getElementById("step4_action").style.display = "none";
+        document.getElementById("step5_action").style.display = "block";
+        var steps = document.getElementsByClassName("step");
+        steps[3].classList.add("completed_step");
+        steps[3].classList.remove("current_step");
+    };
+
 };

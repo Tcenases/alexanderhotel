@@ -358,6 +358,12 @@ sup, sub {
     color: black;
 }
 
+.specification + sup {
+    color: gray;
+    top: -5px;
+    font-size: 14px;
+}
+
 .navigation {
     color:black;
     font-size: 40px;
@@ -624,11 +630,14 @@ footer p {
     margin: auto;
     font-size: 35px;
     margin-bottom: 40px;
+    width: 100%;
+    text-align: center;
 
 }
 
 .step_actions {
     margin-bottom: 55px;
+    color: black;
 }
 
 .step_actions select {
@@ -680,4 +689,18 @@ footer p {
 #step2_action {
     display: none;
 }
+
+#step3_action {
+    display: none;
+}
+
+
+#step4_action {
+    display: none;
+}
+
+#step5_action {
+    display: none;
+}
+
 

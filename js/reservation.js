@@ -87,7 +87,8 @@ function init() {
             window.sessionStorage.children = children.value;
             window.sessionStorage.roomType = roomType.value;
             window.sessionStorage.flag = "reservations";
-            secondStep();
+            scroll();
+            setTimeout(secondStep, 750);
             //alert("OK");
         };
     };
@@ -151,7 +152,8 @@ function init() {
             if (e.target.classList.contains("choose")){
                 window.sessionStorage.roomID = e.target.parentElement.id;
                 window.sessionStorage.flag = "step2"
-                thirdStep();
+                scroll();
+                setTimeout(thirdStep, 750);
             };
         };
 
@@ -216,7 +218,8 @@ function init() {
             b.addEventListener("click", prepareForStep4);
 
             function prepareForStep4() {
-                fourthStep();
+                scroll();
+                setTimeout(fourthStep, 750);
             };
 
         };

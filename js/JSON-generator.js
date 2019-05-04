@@ -60,5 +60,35 @@ room4.image = "images/img_4.jpg";
 
 hotelRooms.push(room4);
 
+var room5 = {};
+room5.name = null;
+room5.category = "? Room";
+room5.roomNumber = "105";
+room5.size = "60";
+room5.bedType = "Two beds";
+room5.maxPersons = "4";
+room5.facilities = {};
+room5.price = 403;
+room5.bookedPeriods = null;
+room5.featured = false;
+room5.image = "images/img_5.jpg";
+
+hotelRooms.push(room5);
+
+var room6 = {};
+room6.name = null;
+room6.category = "? Room";
+room6.roomNumber = "106";
+room6.size = "60";
+room6.bedType = "Two beds";
+room6.maxPersons = "4";
+room6.facilities = {};
+room6.price = 676;
+room6.bookedPeriods = null;
+room6.featured = false;
+room6.image = "images/img_6.jpg";
+
+hotelRooms.push(room6);
+
 var data = JSON.stringify(hotelRooms);
 console.log(data);

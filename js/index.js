@@ -18,6 +18,6 @@ function init() {
         //     newUrl = url + "reservation.html";
         // };
         // window.location.assign(newUrl);
-        window.location.assign(window.location.hostname + "/reservation.html");
+        window.location.assign("reservation.html");
     };
 };

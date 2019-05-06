@@ -121,7 +121,6 @@ h1 {
 .nav_button {
     background: white;
     border: 2px solid white;
-    background: white;
     color: #999999;
     text-transform: uppercase;
     font-size: 14px;
@@ -703,4 +702,55 @@ footer p {
     display: none;
 }
 
+/* //////Rooms & suites/////////// */
 
+
+.featured {
+    width: 100%;
+    padding: 30px 0;
+}
+
+.room_preview--featured {
+    width: 100%;
+    display: flex;
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.room_preview--featured-reversed {
+    flex-direction: row-reverse;
+}
+
+.room_preview--featured img {
+    width: 50%;
+}
+
+.room_preview--featured .room_summary {
+    padding: 25px 90px;
+} 
+
+.room_preview--featured .room_heading {
+    font-size: 40px;
+}
+
+.readmore_button {
+    background: #fc3c3c;
+    border: 2px solid #fc3c3c;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.2rem;
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.readmore_button:hover {
+    background: transparent;
+    color: #fc3c3c;
+}
+
+#loader {
+    color: black;
+    font-size: 50px;
+}

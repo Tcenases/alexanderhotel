@@ -115,7 +115,7 @@ room8.maxPersons = "2";
 room8.facilities = {};
 room8.price = 241;
 room8.bookedPeriods = null;
-room8.featured = false;
+room8.featured = true;
 room8.image = "images/img_2.jpg";
 
 hotelRooms.push(room8);
@@ -145,7 +145,7 @@ room10.maxPersons = "10";
 room10.facilities = {};
 room10.price = 1568;
 room10.bookedPeriods = null;
-room10.featured = false;
+room10.featured = true;
 room10.image = "images/img_4.jpg";
 
 hotelRooms.push(room10);

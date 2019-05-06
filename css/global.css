@@ -754,3 +754,16 @@ footer p {
     color: black;
     font-size: 50px;
 }
+
+.simpleHeading {
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.simpleText {
+    color:black;
+    width: 55%;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+}

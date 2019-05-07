@@ -28,6 +28,7 @@ function init() {
 
     function loadRooms() {
 
+        window.sessionStorage.data = JSON.stringify(data);
         var featuredContainer = document.getElementById("featuredContainer");
         var simpleContainer = document.getElementById("simpleContainer");
         document.getElementById("loader").style.display = "none";

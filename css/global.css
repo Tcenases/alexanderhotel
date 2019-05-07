@@ -767,3 +767,98 @@ footer p {
     text-align: center;
     line-height: 1.8;
 }
+
+/* ////////SimngleRoom.html/////////// */
+
+.room_overview {
+    color: black;
+    background-color: #fafafa;
+}
+
+.room_block, .reservation_block {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.room_block {
+    width: 60%;
+}
+
+.head_block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.images_block {
+    display: flex;
+    flex-direction: column;
+}
+
+.big_image_block img{
+    width: 100%;
+}
+
+.small_images_block {
+    display: flex;
+    background-color: white;
+}
+
+.small_images_block img {
+    width: 25%;
+    height: 25%;
+    object-fit: contain;
+    margin: 5px 0px 5px 10px;
+}
+
+.form_block {
+    display: flex;
+    flex-direction: column;
+}
+
+.roomName h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.roomPrice {
+    font-size: 24px;
+    line-height: 0.6;
+    align-self: center;
+}
+
+.roomPrice span {
+    color: #999999;
+    font-size: 12px;
+}
+
+.info_block {
+   display: flex;
+   background-color: white;
+   padding: 25px 0;
+   margin: 20px 0;
+}
+
+.info_block_small {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.info_block_small img {
+    object-fit: contain;
+    /* align-self: center; */
+    margin-right: 5px;
+}
+
+.info_block_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5px;
+}
+
+.info_block_text span {
+    line-height: 1.5;
+}

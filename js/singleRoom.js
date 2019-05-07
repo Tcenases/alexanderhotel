@@ -6,4 +6,4 @@ function init() {
     document.getElementById("sub_heading").innerText = "Room #" + roomNumber;
 
 
-}
+};

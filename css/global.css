@@ -788,7 +788,7 @@ footer p {
     width: 38%;
     margin-left: 2%;
     align-self: flex-start;
-    margin-top: 56px;
+    margin-top: 77px;
 }
 
 .head_block {
@@ -825,19 +825,19 @@ footer p {
 }
 
 .roomName h2 {
-    font-size: 36px;
+    font-size: 58px;
     margin: 10px 0;
 }
 
 .roomPrice {
-    font-size: 28px;
+    font-size: 36px;
     line-height: 0.6;
     align-self: center;
 }
 
 .roomPrice span {
     color: #999999;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .info_block {

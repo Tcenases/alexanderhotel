@@ -778,11 +778,17 @@ footer p {
 .room_block, .reservation_block {
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
 }
 
 .room_block {
     width: 60%;
+}
+
+.reservation_block {
+    width: 38%;
+    margin-left: 2%;
+    align-self: flex-start;
+    margin-top: 56px;
 }
 
 .head_block {
@@ -814,29 +820,30 @@ footer p {
 .form_block {
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 
 .roomName h2 {
-    font-size: 24px;
+    font-size: 36px;
     margin: 10px 0;
 }
 
 .roomPrice {
-    font-size: 24px;
+    font-size: 28px;
     line-height: 0.6;
     align-self: center;
 }
 
 .roomPrice span {
     color: #999999;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .info_block {
    display: flex;
    background-color: white;
    padding: 25px 0;
-   margin: 20px 0;
+   margin: 15px 0;
 }
 
 .info_block_small {
@@ -861,4 +868,33 @@ footer p {
 
 .info_block_text span {
     line-height: 1.5;
+}
+
+.description_block {
+    padding: 30px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.description_block h3 {
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.description_block hr {
+    border-width: 0;
+    background-color: #ccc;
+    height: 2px;
+    margin: 20px 0;
+}
+
+.description_text {
+    font-size: 17px;
+    line-height: 1.1;
+}
+
+.form_block h2 {
+    font-size: 27px;
+    text-align: center;
+    margin-top: 15px;
 }

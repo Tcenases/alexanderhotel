@@ -87,15 +87,37 @@
                             </div>
                         </div>
                     </div>
-                    <div class="decription_block"></div>
+                    <div class="description_block">
+                        <h3>Description</h3>
+                        <hr>
+                        <p class="description_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta esse ut officiis amet unde ipsum maxime rem, dolorem explicabo laudantium beatae voluptates ducimus fugit quod necessitatibus ab doloremque deleniti quia!
+                        Ratione, asperiores accusamus quisquam exercitationem ut autem soluta ad, reprehenderit modi repellat consequatur voluptatem. Quam animi non aliquam, doloribus voluptates, a unde maiores in, iusto nobis ipsum at vel officia.
+                        Nemo quos voluptatum repudiandae tempore mollitia voluptas, quasi ipsa impedit. Consequatur facere vitae aspernatur. Obcaecati, consequatur voluptate. Illum commodi nisi dolores et perspiciatis quisquam iure, repudiandae ex iusto corporis? Quos.</p>
+                    </div>
                 </div>
                 <div class="reservation_block">
                     <div class="form_block">
-                        <input type="text">
-                        <input type="text">
-                        <input type="text">
-                        <input type="text">
-                        <input type="text">
+                        <h2>Reservation</h2>
+                        <label for="check-in">Check-in</label>
+                        <input type="date" name="check-in" id="check-in">
+                        <label for="check-in">Check-out</label>
+                        <input type="date" name="check-out" id="check-out">
+                        <label for="adults">Adults</label>
+                        <select name="adults" id="adults">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4+">4+</option>
+                        </select>
+                        <label for="children">Children</label>
+                        <select name="children" id="children">
+                            <option value="0">-</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4+">4+</option>
+                        </select>
+                        <button id="check-button" class="check_button">Check availability</button>
                     </div>
                     <div class="direct_block"></div>
                 </div>

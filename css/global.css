@@ -821,6 +821,7 @@ footer p {
     display: flex;
     flex-direction: column;
     background-color: white;
+    padding: 30px;
 }
 
 .roomName h2 {
@@ -896,5 +897,53 @@ footer p {
 .form_block h2 {
     font-size: 27px;
     text-align: center;
+    margin-top: 0;
+}
+
+.form_block input, .form_block select, .form_block button {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form_block label {
+    margin-bottom: 10px;
+}
+
+.form_block button {
+    margin-top: 31px;
+}
+
+.form_block .choose {
+    padding: 1rem;
+    letter-spacing: 0.1rem;
+    display: none;
+}
+
+.direct_block {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-top: 15px;
+    padding: 50px;
+}
+
+.direct_block p {
+    margin-top: 15px;   
+}
+
+.p_head {
+    font-size: 24px;
+}
+
+.p_tel {
+    font-size: 20px;
+    color: #fc3c3c;
+}
+
+.p_italic {
+    color: #ccc;
+    font-style: italic;
+    font-size: 16px;
 }

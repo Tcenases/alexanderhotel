@@ -10,7 +10,7 @@ room1.numberOfBeds = 1;
 room1.maxPersons = "1";
 room1.facilities = {};
 room1.price = 156;
-room1.bookedPeriods = [{startDate: null, endDate: null}];
+room1.bookedPeriods = [];
 room1.featured = false;
 room1.image = "images/img_1.jpg";
 
@@ -26,7 +26,7 @@ room2.numberOfBeds = 2;
 room2.maxPersons = "2";
 room2.facilities = {};
 room2.price = 256;
-room2.bookedPeriods = null;
+room2.bookedPeriods = [];
 room2.featured = false;
 room2.image = "images/img_2.jpg";
 
@@ -42,7 +42,7 @@ room3.numberOfBeds = 5;
 room3.maxPersons = "5";
 room3.facilities = {};
 room3.price = 456;
-room3.bookedPeriods = null;
+room3.bookedPeriods = [];
 room3.featured = true;
 room3.image = "images/img_3.jpg";
 
@@ -58,7 +58,7 @@ room4.numberOfBeds = 2;
 room4.maxPersons = "4";
 room4.facilities = {};
 room4.price = 676;
-room4.bookedPeriods = null;
+room4.bookedPeriods = [];
 room4.featured = false;
 room4.image = "images/img_4.jpg";
 
@@ -106,7 +106,7 @@ room7.numberOfBeds = 7;
 room7.maxPersons = "7";
 room7.facilities = {};
 room7.price = 1240;
-room7.bookedPeriods = null;
+room7.bookedPeriods = [];
 room7.featured = false;
 room7.image = "images/img_2.jpg";
 
@@ -122,7 +122,7 @@ room8.numberOfBeds = 2;
 room8.maxPersons = "2";
 room8.facilities = {};
 room8.price = 241;
-room8.bookedPeriods = null;
+room8.bookedPeriods = [];
 room8.featured = true;
 room8.image = "images/img_2.jpg";
 
@@ -138,7 +138,7 @@ room9.numberOfBeds = 1;
 room9.maxPersons = "1";
 room9.facilities = {};
 room9.price = 158;
-room9.bookedPeriods = null;
+room9.bookedPeriods = [];
 room9.featured = false;
 room9.image = "images/img_3.jpg";
 
@@ -154,7 +154,7 @@ room10.numberOfBeds = 8;
 room10.maxPersons = "10";
 room10.facilities = {};
 room10.price = 1568;
-room10.bookedPeriods = null;
+room10.bookedPeriods = [];
 room10.featured = true;
 room10.image = "images/img_4.jpg";
 
@@ -170,7 +170,7 @@ room11.numberOfBeds = 10;
 room11.maxPersons = "14";
 room11.facilities = {};
 room11.price = 2083;
-room11.bookedPeriods = null;
+room11.bookedPeriods = [];
 room11.featured = false;
 room11.image = "images/img_5.jpg";
 
@@ -186,7 +186,7 @@ room12.numberOfBeds = 6;
 room12.maxPersons = "12";
 room12.facilities = {};
 room12.price = 3500;
-room12.bookedPeriods = null;
+room12.bookedPeriods = [];
 room12.featured = false;
 room12.image = "images/img_6.jpg";
 

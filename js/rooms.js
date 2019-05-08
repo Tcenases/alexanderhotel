@@ -3,7 +3,12 @@ window.addEventListener("load", init);
 function init() {
 
     var data;
-    getDataFromTheServer();
+    if (!window.sessionStorage.data) {
+        setTimeout(getDataFromTheServer, 5000);
+    } else {
+       data = JSON.parse(window.sessionStorage.data);
+       loadRooms();
+    };
 
     function getDataFromTheServer() {
 
@@ -21,7 +26,7 @@ function init() {
             } 
             else {
                 data = JSON.parse(xhr.responseText);
-                setTimeout(loadRooms, 5000);
+                loadRooms();
             };
         };
     };

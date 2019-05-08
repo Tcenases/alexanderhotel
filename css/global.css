@@ -815,13 +815,14 @@ footer p {
 .small_images_block {
     display: flex;
     background-color: white;
+    justify-content: space-around;
 }
 
 .small_images_block img {
-    width: 25%;
+    width: 24%;
     height: 25%;
     object-fit: contain;
-    margin: 5px 0px 5px 10px;
+    margin: 5px 0;
 }
 
 .form_block {
@@ -876,6 +877,12 @@ footer p {
 
 .info_block_text span {
     line-height: 1.5;
+}
+
+.info_block_text sup {
+    font-size: 13px;
+    position: relative;
+    top: -5px;
 }
 
 .description_block {

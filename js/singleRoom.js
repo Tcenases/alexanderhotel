@@ -76,6 +76,7 @@ function init() {
         var error3 = document.getElementById("p_error_3");
         var error4 = document.getElementById("p_error_4");
         var errorPeople = document.getElementById("p_error_people");
+        var errorDates = document.getElementById("p_error_dates");
         var success = document.getElementById("p_success");
         var checkButton = document.getElementById("check_button");
         var chooseButton = document.getElementById("choose_button");
@@ -99,6 +100,7 @@ function init() {
         children.addEventListener("change", peopleValidation);
 
         function checkINvalidation() {
+            errorDates.style.display = "none";
             checkIN = new Date(document.getElementById("check-in").value);
             if (checkINinput.value == "") {
                 error1.style.display = "block";
@@ -119,6 +121,7 @@ function init() {
         };
 
         function checkOUTvalidation() {
+            errorDates.style.display = "none";
             checkOUT = new Date(document.getElementById("check-out").value);
             if (checkOUTinput.value == "") {
                 error2.style.display = "block";
@@ -165,29 +168,45 @@ function init() {
                 children.classList.remove("invalid");
                 if (checkButton.style.display == "none") {
                     chooseButton.style.display = "block";
-                    errorPeople.style.display = "none";
+                    // errorPeople.style.display = "none";
                 };
                 return true;
             };
         };
 
         function revert() {
+            errorPeople.style.display = "none";
             success.style.display = "none";
             chooseButton.style.display = "none";
             checkButton.style.display = "block";
         }
 
         if (isFormValid()) {
-            checkButton.style.display = "none";
-            success.style.display = "block";
-            chooseButton.style.display = "block";
-            document.getElementById("choose_button").addEventListener("click", startReservation);
+            if (areDatesFree()) {
+                // errorDates.style.display = "none";
+                checkButton.style.display = "none";
+                success.style.display = "block";
+                chooseButton.style.display = "block";
+                document.getElementById("choose_button").addEventListener("click", startReservation);
+            } else {
+                errorDates.style.display = "block";
+            };
+        };
+
+        function areDatesFree() {
+            for (var i = 0; i < room.bookedPeriods.length; i++) {
+                if ((checkINinput.value < room.bookedPeriods[i].checkIN && checkOUTinput.value <= room.bookedPeriods[i].checkIN) || (checkINinput.value > room.bookedPeriods[i].checkOUT)) {
+                    continue;
+                }
+                return false;
+            };
+            return true;
         };
 
         function startReservation() {
             window.sessionStorage.flag = "singleRoom";
-            window.sessionStorage.checkIN = checkIN;
-            window.sessionStorage.checkOUT = checkOUT;
+            window.sessionStorage.checkIN = checkINinput.value;
+            window.sessionStorage.checkOUT = checkOUTinput.value;
             window.sessionStorage.adults = adults.value;
             window.sessionStorage.children = children.value;
             window.location.assign("reservation.html");

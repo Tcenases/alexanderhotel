@@ -74,7 +74,7 @@ room5.numberOfBeds = 5;
 room5.maxPersons = "5";
 room5.facilities = {};
 room5.price = 725;
-room5.bookedPeriods = null;
+room5.bookedPeriods = [{checkIN: "2019-05-01", checkOUT: "2019-05-15"}, {checkIN: "2019-05-15", checkOUT: "2019-06-01"}];
 room5.featured = false;
 room5.image = "images/img_5.jpg";
 
@@ -90,7 +90,7 @@ room6.numberOfBeds = 2;
 room6.maxPersons = "2";
 room6.facilities = {};
 room6.price = 330;
-room6.bookedPeriods = null;
+room6.bookedPeriods = [{checkIN: "2019-06-01", checkOUT: "2019-06-15"}, {checkIN: "2019-06-15", checkOUT: "2019-07-01"}];
 room6.featured = false;
 room6.image = "images/img_6.jpg";
 

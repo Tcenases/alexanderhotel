@@ -933,6 +933,25 @@ footer p {
     display: none;
 }
 
+.p_error {
+    color: red;
+    margin: -10px 0 10px 0;
+}
+
+.p_success {
+    color: #0ad90a;
+    margin: 10px 0 0px 0;
+    text-align: center;
+}
+
+#p_error_1, #p_error_2, #p_error_3, #p_error_4, #p_success, #p_error_people {
+    display: none;
+}
+
+#p_error_people {
+    margin: 17px 0;
+}
+
 .direct_block {
     background-color: white;
     display: flex;

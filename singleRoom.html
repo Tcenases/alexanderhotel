@@ -102,25 +102,33 @@
                         <h2>Reservation</h2>
                         <label for="check-in">Check-in</label>
                         <input type="date" name="check-in" id="check-in">
+                        <p id="p_error_1" class="p_error">Error message: 123!</p>
                         <label for="check-in">Check-out</label>
                         <input type="date" name="check-out" id="check-out">
+                        <p id="p_error_2" class="p_error">Error message: 123!</p>
                         <label for="adults">Adults</label>
                         <select name="adults" id="adults">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
-                            <option value="4+">4+</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
+                        <p id="p_error_3" class="p_error">Error message: 123!</p>
                         <label for="children">Children</label>
                         <select name="children" id="children">
                             <option value="0">-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
-                            <option value="4+">4+</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
-                        <button id="check-button" class="check_button">Check availability</button>
-                        <button class="choose">Continue Reservation</button>
+                        <p id="p_error_4" class="p_error">Error message: 123!</p>
+                        <p id="p_success" class="p_success">This room is free for booking for selected period!</p>
+                        <button id="check_button" class="check_button">Check availability</button>
+                        <button id="choose_button" class="choose">Continue Reservation</button>
+                        <p id="p_error_people" class="p_error">Change the number of people to continue booking!</p>
                     </div>
                     <div class="direct_block">
                         <img src="images/pen.png" alt="pen">
@@ -131,7 +139,6 @@
                 </div>
         </div>
     </section>
-
     <footer>
         <div class="container">
             <p>to be continued... | Alexander Bondar</p>

@@ -38,7 +38,7 @@ function init() {
         var simpleContainer = document.getElementById("simpleContainer");
         var controller = true;
         var loaders = document.getElementsByClassName("ajax_loader");
-        Array.prototype.forEach.call(loaders, element => {
+        Array.prototype.forEach.call(loaders, function(element) {
             element.style.display = "none";
         });
         for (var i = 0; i < data.length; i++) {   

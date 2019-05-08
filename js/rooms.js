@@ -31,9 +31,11 @@ function init() {
         window.sessionStorage.data = JSON.stringify(data);
         var featuredContainer = document.getElementById("featuredContainer");
         var simpleContainer = document.getElementById("simpleContainer");
-        document.getElementById("loader").style.display = "none";
         var controller = true;
-
+        var loaders = document.getElementsByClassName("ajax_loader");
+        Array.prototype.forEach.call(loaders, element => {
+            element.style.display = "none";
+        });
         for (var i = 0; i < data.length; i++) {   
             var elem = document.createElement("div");  
             elem.innerHTML = "<img src='" + data[i].image + "' alt='room" + i + "'><div class='room_summary'><h2 class='room_heading'>" + data[i].category + "</h2><p class='specs'><sup>$</sup><span class='price'>" + data[i].price + "</span><sub>/per night</sub></p><p class='specs'><span class='specification'>Adults: </span>" + data[i].maxPersons + "</p><p class='specs'><span class='specification'>Categories: </span>" + data[i].category + "</p><p class='specs'><span class='specification'>Facilities: </span>Closet with hangers, HD flat-screen TV, Telephone</p><p class='specs'><span class='specification'>Size: </span>" + data[i].size + "m<sup>2</sup></p><p class='specs'><span class='specification'>Bed Type: </span>" + data[i].bedType + "</p><button id='" + data[i].roomNumber + "' class='readmore_button'>Read More</button>"

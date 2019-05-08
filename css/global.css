@@ -750,9 +750,11 @@ footer p {
     color: #fc3c3c;
 }
 
-#loader {
-    color: black;
-    font-size: 50px;
+.ajax_loader {
+    /* color: black;
+    font-size: 50px; */
+    margin: auto;
+    display: block;
 }
 
 .simpleHeading {

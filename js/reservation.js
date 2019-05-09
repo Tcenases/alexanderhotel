@@ -161,7 +161,7 @@ function init() {
     };
 
     function thirdStep() {
-        //changing step_vies
+        //changing step_view
         document.getElementById("step2_action").style.display = "none";
         document.getElementById("step3_action").style.display = "block";
         var steps = document.getElementsByClassName("step");

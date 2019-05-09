@@ -168,7 +168,7 @@ function init() {
                 children.classList.remove("invalid");
                 if (checkButton.style.display == "none") {
                     chooseButton.style.display = "block";
-                    // errorPeople.style.display = "none";
+                    errorPeople.style.display = "none";
                 };
                 return true;
             };
@@ -209,6 +209,7 @@ function init() {
             window.sessionStorage.checkOUT = checkOUTinput.value;
             window.sessionStorage.adults = adults.value;
             window.sessionStorage.children = children.value;
+            window.sessionStorage.roomNumber = room.roomNumber;
             window.location.assign("reservation.html");
         };
 

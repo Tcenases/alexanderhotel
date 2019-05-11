@@ -91,6 +91,8 @@ function init() {
 
     function checkAvailabilty() { 
 
+        checkOUTinputWasFocused = true;
+
         function isFormValid() {
             var marker = true;
             if (!checkINvalidation()) { marker = false };

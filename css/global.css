@@ -623,6 +623,16 @@ footer p {
     justify-content: center;
     width: 100%;
     color: black;
+    flex-wrap: wrap;
+}
+
+.step_container input, .step_container select, .step_container button{
+    width: 280px;
+}
+
+.step_container button{
+    width: 280px;
+    margin-top: 25px;
 }
 
 .step_header{
@@ -639,9 +649,10 @@ footer p {
     color: black;
 }
 
-.step_actions select {
-    width: 230px;
-}
+.step_actions label {
+    margin-bottom: 10px;
+    text-align: center;
+} 
 
 .form_group {
     margin: 10px 30px;
@@ -937,6 +948,8 @@ footer p {
     color: red;
     margin: -10px 0 10px 0;
     display: none;
+    width: 100%;
+    text-align: center;
 }
 
 .p_success {

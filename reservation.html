@@ -78,10 +78,12 @@
                     <div class="form_element">
                         <label for="check-in">Check-in</label>
                         <input type="date" name="check-in" id="check-in">
+                        <!-- <p id="p_error_1" class="p_error">Error message: 123!</p> -->
                     </div>
                     <div class="form_element">
                         <label for="check-out">Check-out</label>
                         <input type="date" name="check-out" id="check-out">
+                        <!-- <p id="p_error_2" class="p_error">Error message: 123!</p> -->
                     </div>
                 </div>
                 <div class="form_group">
@@ -91,7 +93,8 @@
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
-                            <option value="4+">4+</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </div>
                     <div class="form_element">
@@ -101,7 +104,8 @@
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
-                            <option value="4+">4+</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </div>
                 </div>
@@ -118,12 +122,14 @@
                         </select>
                     </div>
                     <div class="form_element">
-                        <button id="check-button" class="check_button">Check availability</button>
+                        <button id="check_button" class="check_button">Check availability</button>
                     </div>
                 </div>
+                <p id="p_error_1" class="p_error">Error message: 123!</p>
+                <p id="p_error_2" class="p_error">Error message: 123!</p>
             </div>
-            <p id="error_msg1" class="error_msg">The check-in date is wrong!</p>
-            <p id="error_msg2" class="error_msg">The check-out date is wrong!</p>
+            <!-- <p id="error_msg1" class="error_msg">The check-in date is wrong!</p>
+            <p id="error_msg2" class="error_msg">The check-out date is wrong!</p> -->
         </div>
     </section>
     <section id="step2_action" class="step_actions">

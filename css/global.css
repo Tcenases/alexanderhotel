@@ -17,7 +17,12 @@ body {
     min-height: 700px;
 }
 
-.main_slider::before {
+.background_image2 {
+    background-image: url(../images/bg_2.jpg);
+    background-size: cover;	
+}
+
+.main_slider::before, .background_image2::before {
     content: "";
     position: absolute;
     background: black;
@@ -471,6 +476,7 @@ li.selected {
 .menu_overview {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 70px;
 }
 
 .menu_preview {
@@ -479,6 +485,10 @@ li.selected {
     flex-direction: column;
     background-color: white;
     box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2)
+}
+
+#menu_page2, #menu_page3 {
+    display: none;
 }
 
 .menu_preview img {

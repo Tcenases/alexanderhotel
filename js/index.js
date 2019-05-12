@@ -16,6 +16,7 @@ function init() {
 
     setInterval(autoSlider, 5000);
     miniSlider();
+    menuPagination();
 
     function startReservationProcess() {
         window.sessionStorage.flag = "index";
@@ -63,7 +64,6 @@ function init() {
         var containerStyles = window.getComputedStyle(document.getElementsByClassName("container")[0]);
         var containerWidth = containerStyles.getPropertyValue("width")
         var slidesAmount = 6 - Math.round(+containerWidth.substring(0, containerWidth.indexOf("px")) / slideWidth);
-        alert(slidesAmount);
         var position = 0;
        
         function right() {
@@ -71,7 +71,6 @@ function init() {
                 ++position
                 elem.parentElement.style.left = "-" + slideWidth * position + "px";
                 arrowsContainer.children[0].style.color = "black";
-                alert(1);
             };
             if (position == slidesAmount) arrowsContainer.children[1].style.color = "gray"; 
         };
@@ -99,6 +98,41 @@ function init() {
 
         window.addEventListener("resize", setupSlider);
 
+    };
+
+    function menuPagination() {
+        var page1 = document.getElementById("menu_page1");
+        var page2 = document.getElementById("menu_page2");
+        var page3 = document.getElementById("menu_page3");
+        var ul = document.getElementById("menu_navigation");
+        ul.addEventListener("click", swapPage);
+        var current = ul.children[0];
+
+        function swapPage(e) {
+            current.classList.remove("selected");
+            current = e.target;
+            current.classList.add("selected");
+            switch (e.target.id) {
+                case "page1": { 
+                    page2.style.display = "none";
+                    page3.style.display = "none";
+                    page1.style.display = "flex";
+                    break;
+                };
+                case "page2": { 
+                    page1.style.display = "none";
+                    page3.style.display = "none";
+                    page2.style.display = "flex";
+                    break;
+                };
+                case "page3": { 
+                    page1.style.display = "none";
+                    page2.style.display = "none";
+                    page3.style.display = "flex";
+                    break;
+                };
+            };
+        };
     };
 
 };

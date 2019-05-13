@@ -113,6 +113,18 @@ body {
     z-index: 5;
 }
 
+.menu_button {
+    color: gray;
+    background-color: black;
+    font-size: 20px;
+    height: 40px;
+    border: 0;
+    top: 25px;
+    left: 108px;
+    position: relative;
+    display: none;
+}
+
 li.active a::before {
     content: "";
     height: 2px;
@@ -229,6 +241,7 @@ h1 {
 
 .booking_form {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
@@ -484,6 +497,7 @@ li.selected {
 
 .menu_overview {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 70px;
 }
@@ -493,7 +507,8 @@ li.selected {
     display: flex;
     flex-direction: column;
     background-color: white;
-    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2)
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
 }
 
 #menu_page2, #menu_page3 {
@@ -568,6 +583,7 @@ li.selected {
 
 .reviews_wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 50px 0;
 }
@@ -1076,6 +1092,14 @@ footer p {
     .featured_rooms .room_preview {
         width: 460px;
     }
+
+    input {
+        width: 190px;
+    }
+
+    .menu_preview {
+        width: 48%;
+    }
     
 }
 
@@ -1088,13 +1112,65 @@ footer p {
         width: 340px;
     }
 
-    input {
-        width: 190px;
-    }
-
     .menu_preview {
         width: 48%;
     }
+
+    h1 {
+        font-size: 70px;
+    }
+
+    select {
+        width: 155px;
+    }
+
+    input {
+        width: 340px;
+    }
+
+    .check_button {
+        width: 340px;
+    }
+
+    .form_element {
+        margin-bottom: 15px;
+    }
+
+    .menu_wrapper {
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 0 10px 16px 100px;
+    }
+
+    .main_navigation {
+        display: none;
+    }
+
+    .service_item {
+        width: 48%;
+    }
+
+    .introduction {
+        width: 65%;
+    }
+
+    .ad_section h2 {
+        font-size: 50px;
+    }
+
+    .review {
+        width: 43%;
+        margin-bottom: 15px;
+    }
+
+    .menu_button {
+        display: block;
+    }
+
+
+
 
 }
 
@@ -1105,6 +1181,19 @@ footer p {
     .featured_rooms .room_preview {
         width: 280px;
     }
+
+    .booking_form {
+        justify-content: center;
+    }
+
+    select {
+        width: 340px;
+    }
+
+    .main_navigation {
+        display: none;
+    }
+
       
 }
 

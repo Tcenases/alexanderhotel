@@ -1191,6 +1191,7 @@ footer p {
 
     .booking_form {
         justify-content: center;
+        width: 85%;
     }
 
     select {
@@ -1272,6 +1273,19 @@ footer p {
 
     .featured_rooms .room_preview {
         width: 420px;
+    }
+
+
+}
+
+
+@media all and (max-width: 400px) {
+    .container {
+        max-width: 390px;
+    }  
+
+    .featured_rooms .room_preview {
+        width: 380px;
     }
 
 

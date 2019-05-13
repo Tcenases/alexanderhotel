@@ -1241,3 +1241,57 @@ footer p {
 
 
 }
+
+@media all and (max-width: 320px) {
+    .container {
+        max-width: 310px;
+    }  
+
+    .menu_button {
+        left:0;
+    }
+
+    .logo {
+        font-size: 16px;
+        margin-left: 25px;
+    }
+
+    input, select, .check_button {
+        width: 250px;
+    }
+
+    .menu_wrapper {
+        padding: 0;
+    }
+
+    .ad_section h2 {
+        font-size: 36px;
+    }
+
+    .ad_section button {
+        padding: 1rem 2rem;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+    
+    .sub_heading {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .room_preview {
+        width: 290px;
+    }
+
+    .menu_button {
+        font-size: 16px;
+        height: 20px;
+        top: 38px;
+    }
+
+}

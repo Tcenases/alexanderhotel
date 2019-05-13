@@ -9,12 +9,15 @@ function init() {
     var arrows = document.getElementsByClassName("arrow");
     var clicked;
     var totalSlides = slides.length;
+    var margin;
 
     document.getElementById("check_button").addEventListener("click", startReservationProcess);
     arrows[0].addEventListener("click", function() { counter - 2; if (counter < 0) { counter = totalSlides - 1 }; clicked = Date.now(); mainSlider() });
     arrows[1].addEventListener("click", function() { clicked = Date.now(); mainSlider() });
 
     setInterval(autoSlider, 5000);
+    adaptiveSliderSetting();
+    window.addEventListener("resize", adaptiveSliderSetting);
     miniSlider();
     menuPagination();
 
@@ -56,8 +59,9 @@ function init() {
         var elem =  document.getElementsByClassName("room_preview")[0];
         var styles = window.getComputedStyle(elem);
         var width = styles.getPropertyValue("width");
-        var margin = styles.getPropertyValue("margin-right");
-        var slideWidth = +width.substring(0, width.indexOf("px")) + +margin.substring(0, margin.indexOf("px"));
+        // var margin = styles.getPropertyValue("margin-right");
+        // var slideWidth = +width.substring(0, width.indexOf("px")) + +margin.substring(0, margin.indexOf("px"));
+        var slideWidth = +width.substring(0, width.indexOf("px")) + +margin;
         var arrowsContainer = document.getElementById("rooms_navigation");
         arrowsContainer.children[0].addEventListener("click", left);
         arrowsContainer.children[1].addEventListener("click", right);
@@ -79,21 +83,30 @@ function init() {
             if (position > 0) {
                 --position
                 elem.parentElement.style.left = "-" + slideWidth * position + "px";
-                arrowsContainer.children[1].style.color = "black"; 
+                arrowsContainer.children[0].style.color = "gray"; 
             };
             if (position == 0) arrowsContainer.children[0].style.color = "gray"; 
         };
 
         function setupSlider() {
+
+
+
             elem =  document.getElementsByClassName("room_preview")[0];
             styles = window.getComputedStyle(elem);
             width = styles.getPropertyValue("width");
-            margin = styles.getPropertyValue("margin-right");
-            slideWidth = +width.substring(0, width.indexOf("px")) + +margin.substring(0, margin.indexOf("px"));
+            // margin = styles.getPropertyValue("margin-right");
+            // slideWidth = +width.substring(0, width.indexOf("px")) + +margin.substring(0, margin.indexOf("px"));
+            slideWidth = +width.substring(0, width.indexOf("px")) + +margin;
             containerStyles = window.getComputedStyle(document.getElementsByClassName("container")[0]);
             containerWidth = containerStyles.getPropertyValue("width")
             slidesAmount = 6 - Math.round(+containerWidth.substring(0, containerWidth.indexOf("px")) / slideWidth);
             position = 0;
+            elem.parentElement.style.left = "-" + slideWidth * position + "px";
+            arrowsContainer.children[0].style.color = "gray"; 
+            arrowsContainer.children[1].style.color = "black"; 
+
+
         };
 
         window.addEventListener("resize", setupSlider);
@@ -134,5 +147,25 @@ function init() {
             };
         };
     };
+
+    function adaptiveSliderSetting() {
+        var container = document.getElementsByClassName("container")[0];
+        var roomElem = document.getElementsByClassName("room_preview")[0];
+        var containerStyles = window.getComputedStyle(container);
+        var roomElemStyles = window.getComputedStyle(roomElem);
+        var containerWidth = containerStyles.getPropertyValue("width");
+        containerWidth = containerWidth.substring(0, containerWidth.indexOf("px"));
+        var roomElemWidth = roomElemStyles.getPropertyValue("width");
+        roomElemWidth = roomElemWidth.substring(0, roomElemWidth.indexOf("px"));
+        var visibleElems = Math.floor(containerWidth / roomElemWidth);
+        var visibleElemsWidth = roomElemWidth * visibleElems;
+        var visibleElemsTotalMargin = containerWidth - visibleElemsWidth;
+        margin = visibleElems != 1 ? Math.ceil(visibleElemsTotalMargin / (visibleElems - 1)) : visibleElemsTotalMargin;
+        var box = document.getElementsByClassName("rooms_overview")[0];
+        box.style.width = (margin + +roomElemWidth) * 6 - margin + "px";
+    };
+
+    // adaptiveSliderSetting();
+    // window.addEventListener("resize", adaptiveSliderSetting);
 
 };

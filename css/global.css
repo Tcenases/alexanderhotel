@@ -17,6 +17,13 @@ body {
     min-height: 700px;
 }
 
+.menu_wrapper {
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .background_image2 {
     background-image: url(../images/bg_2.jpg);
     background-size: cover;	
@@ -71,7 +78,8 @@ body {
     max-width: 1140px;
     display: flex;
     margin: auto;
-    padding: 10px;
+    /* ! 10px */
+    padding: 10px 0; 
     justify-content: space-between;
     /* for IE11 */
     align-items: center;
@@ -328,8 +336,9 @@ h2 {
 }
 
 .featured_rooms .rooms_overview {
-    display: block;
-    width: 3000px;
+    display: flex;
+    justify-content: space-between;
+    /* width: 3000px; */
 }
 
 .wrapper {
@@ -337,9 +346,9 @@ h2 {
 }
 
 .featured_rooms .room_preview {
-    float: left;
+    /* float: left; */
     width: 364px;
-    margin-right: 24px;
+    /* margin-right: 24px; */
 }
 
 .introduction {
@@ -1056,4 +1065,53 @@ footer p {
     color: #ccc;
     font-style: italic;
     font-size: 16px;
+}
+
+
+@media all and (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .featured_rooms .room_preview {
+        width: 460px;
+    }
+    
+}
+
+@media all and (max-width: 991px) {
+
+    .container {
+        max-width: 769px;
+    }
+    .featured_rooms .room_preview {
+        width: 340px;
+    }
+
+    input {
+        width: 190px;
+    }
+
+    .menu_preview {
+        width: 48%;
+    }
+
+}
+
+@media all and (max-width: 780px) {
+    .container {
+        max-width: 590px;
+    }
+    .featured_rooms .room_preview {
+        width: 280px;
+    }
+      
+}
+
+
+@media all and (max-width: 600px) {
+    .container {
+        max-width: 500px;
+    }  
+    
 }

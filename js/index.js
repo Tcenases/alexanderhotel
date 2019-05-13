@@ -151,6 +151,7 @@ function init() {
     function adaptiveSliderSetting() {
         var container = document.getElementsByClassName("container")[0];
         var roomElem = document.getElementsByClassName("room_preview")[0];
+        var wrapper = document.getElementsByClassName("rooms_overview")[0];
         var containerStyles = window.getComputedStyle(container);
         var roomElemStyles = window.getComputedStyle(roomElem);
         var containerWidth = containerStyles.getPropertyValue("width");
@@ -161,8 +162,10 @@ function init() {
         var visibleElemsWidth = roomElemWidth * visibleElems;
         var visibleElemsTotalMargin = containerWidth - visibleElemsWidth;
         margin = visibleElems != 1 ? Math.ceil(visibleElemsTotalMargin / (visibleElems - 1)) : visibleElemsTotalMargin;
+        visibleElems != 1 ? wrapper.style.paddingLeft = 0 : wrapper.style.paddingLeft = margin / 2 + "px"
         var box = document.getElementsByClassName("rooms_overview")[0];
         box.style.width = (margin + +roomElemWidth) * 6 - margin + "px";
+        console.log(visibleElemsTotalMargin)
     };
 
     // adaptiveSliderSetting();

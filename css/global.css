@@ -1194,6 +1194,10 @@ footer p {
         display: none;
     }
 
+    .menu_wrapper {
+        padding: 0 10px 16px 50px;
+    }
+
       
 }
 
@@ -1202,5 +1206,38 @@ footer p {
     .container {
         max-width: 500px;
     }  
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .nav_button {
+        padding:  1rem 2rem;
+    }
+
+    .service_item {
+        width: 80%;
+    }
+
+    .featured_rooms .room_preview {
+        width: 445px;
+    }
+
+    .menu_preview {
+        width: 90%;
+    }
+
+    .review {
+        width: 85%;
+    }
     
+}
+
+
+@media all and (max-width: 480px) {
+    .container {
+        max-width: 450px;
+    }  
+
+
 }

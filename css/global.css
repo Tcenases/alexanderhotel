@@ -1106,7 +1106,7 @@ footer p {
         max-width: 769px;
     }
     .featured_rooms .room_preview {
-        width: 340px;
+        width: 380px;
     }
 
     .menu_preview {
@@ -1267,12 +1267,33 @@ footer p {
 
 
 @media all and (max-width: 480px) {
+
     .container {
         max-width: 450px;
     }  
 
     .featured_rooms .room_preview {
-        width: 420px;
+        width: 400px;
+    }
+
+    .menu_button {
+        margin-right: 15px;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .logo {
+        margin-left: 15px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .main_block {
+        padding: 10px;
+    }
+
+    .menu_wrapper {
+        padding: 10px 0 0 0;
     }
 
 

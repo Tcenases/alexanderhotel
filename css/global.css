@@ -1142,7 +1142,11 @@ footer p {
     }
 
     .main_navigation {
-        display: none;
+        display: block;
+    }
+
+    li.active a::before {
+        bottom: -4px;
     }
 
     .service_item {
@@ -1168,8 +1172,9 @@ footer p {
         margin-right: 90px;
     }
 
-    li {
+    .main_navigation li {
         display: block;
+        margin-bottom: 10px;
     }
 
     .logo {
@@ -1273,7 +1278,7 @@ footer p {
     }  
 
     .featured_rooms .room_preview {
-        width: 400px;
+        width: 380px;
     }
 
     .menu_button {
@@ -1306,7 +1311,7 @@ footer p {
     }  
 
     .featured_rooms .room_preview {
-        width: 380px;
+        width: 320px;
     }
 
 
@@ -1362,6 +1367,11 @@ footer p {
         font-size: 16px;
         height: 20px;
         top: 38px;
+    }
+
+    .main_navigation li {
+        display: block;
+        margin-bottom: 10px;
     }
 
 }

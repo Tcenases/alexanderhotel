@@ -1060,6 +1060,7 @@ footer p {
     justify-content: center;
     margin-top: 15px;
     padding: 50px;
+    text-align: center
 }
 
 .direct_block p {
@@ -1229,6 +1230,40 @@ footer p {
 
     .room_preview--featured img {
         width: 100%
+    }
+
+     /* ///////////////////// */
+
+    .room_overview .container{
+    flex-direction: column;
+    }
+
+    .room_block {
+        width: 98%;
+    }
+
+    .roomName h2 {
+        font-size: 35px;
+    }
+
+    .roomPrice {
+        font-size: 27px;
+    }
+
+    .roomPrice span {
+        font-size: 14px;
+    }
+
+    .info_block {
+        flex-wrap: wrap;
+    }
+
+    .info_block_small {
+        width: 50%;
+    }
+
+    .reservation_block {
+        width: 94%;
     }
 
       

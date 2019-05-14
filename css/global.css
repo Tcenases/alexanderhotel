@@ -1301,6 +1301,10 @@ footer p {
         padding: 10px 0 0 0;
     }
 
+    h1 {
+        font-size: 30px;
+    }
+
 
 }
 
@@ -1312,6 +1316,10 @@ footer p {
 
     .featured_rooms .room_preview {
         width: 320px;
+    }
+
+    h1 {
+        font-size: 26px;
     }
 
 

@@ -803,6 +803,61 @@ footer p {
     display: none;
 }
 
+#room_container {
+    width: 35%;
+}
+
+#room_container .room_preview {
+    width: 100%;
+}
+
+.booking_info {
+    align-self: flex-start;
+}
+
+.booking_info input {
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.booking_info p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.booking_info button {
+    display: block;
+    background: #fc3c3c;
+    border: 2px solid #fc3c3c;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    margin-top: 30px;
+    height: 50px;
+    width: 300px;
+}
+
+.booking_info button:hover {
+    color: #fc3c3c;
+    background-color: transparent;
+}
+
+.booking_info label {
+    text-align: left;
+}
+
+#step3_action .container {
+    justify-content: space-evenly;
+}
+
+
+
+
+
+
 /* //////Rooms & suites/////////// */
 
 
@@ -1481,4 +1536,3 @@ footer p {
      /* ///////////////// */
     
 }
-

@@ -250,7 +250,7 @@ function init() {
             };
         
 
-            var container = document.getElementById("step3_action").children[0];
+            var container = document.getElementById("room_container");
             var elem = document.createElement("div");
             elem.classList.add("room_preview")
             var img = document.createElement("img");
@@ -265,12 +265,59 @@ function init() {
             elem.appendChild(summary);
             container.appendChild(elem);
 
-            var b = document.getElementById("reserv_button");
-            b.addEventListener("click", prepareForStep4);
+            document.getElementById("check-in-span").innerText = window.sessionStorage.checkIN;
+            document.getElementById("check-out-span").innerText = window.sessionStorage.checkOUT;
 
-            function prepareForStep4() {
-                scroll();
-                setTimeout(fourthStep, 750);
+            var b = document.getElementById("reserv_button");
+            b.addEventListener("click", validateForm);
+
+            var name = document.getElementById("name");
+            var surname = document.getElementById("surname");
+            var email = document.getElementById("email");
+            var tel = document.getElementById("tel");
+            var formContainer = document.getElementsByClassName("booking_info")[0];
+
+            function validateForm() {              
+                if (name.value == "") {
+                    name.classList.add("invalid");
+                } else {
+                    name.classList.remove("invalid");
+                };
+                if (surname.value == "") {
+                    surname.classList.add("invalid");
+                } else {
+                    surname.classList.remove("invalid");
+                };
+                if (email.value == "") {
+                    email.classList.add("invalid");
+                } else {
+                    email.classList.remove("invalid");
+                };
+                if (tel.value == "") {
+                    tel.classList.add("invalid");
+                } else {
+                    tel.classList.remove("invalid");
+                };
+
+                formContainer.addEventListener("change", validateForm);
+                var formValid = true
+
+                for (var i = 0; i < formContainer.children.length; i++) {
+                    if (formContainer.children[i].classList.contains("invalid")) {
+                        formValid = false;
+                        break;
+                    };
+                };
+
+                if (formValid) {
+                    window.sessionStorage.name = name.value;
+                    window.sessionStorage.surname = surname.value;
+                    window.sessionStorage.email = email.value;
+                    window.sessionStorage.tel = tel.value;
+                    scroll();
+                    setTimeout(fourthStep, 750);
+                };
+
             };
 
         };
@@ -298,5 +345,9 @@ function init() {
         steps[3].classList.add("completed_step");
         steps[3].classList.remove("current_step");
     };
+
+    // develop-only
+    secondStep();
+    thirdStep();
 
 };

@@ -21,7 +21,7 @@
                 <nav>
                     <button id="menu_button" class="menu_button">= MENU</button>
                     <ul class="main_navigation">
-                        <li >
+                        <li>
                             <a href="index.html">Home</a>
                         </li>
                         <li>
@@ -160,7 +160,10 @@
     <section id="step3_action" class="step_actions">
         <div class="container">
             <h2 class="step_header">Make a Reservation</h2>
-            <div>
+            <div id="room_container"></div>
+            <div class="booking_info">
+                <p>Check in: <br> <span id="check-in-span">00/00/0000</span> from 14:00</p>
+                <p>Check out: <br> <span id="check-out-span">01/01/0001</span> to 13:00</p>
                 <label for="name">Name</label>
                 <input type="text" name="" id="name">
                 <label for="surname">Surname</label>
@@ -168,7 +171,7 @@
                 <label for="email">E-mail</label>
                 <input type="email" name="" id="email">
                 <label for="tel">Telephone</label>
-                <input type="tel" name="" id="Telephone">
+                <input type="tel" name="" id="tel">
                 <button id="reserv_button">Reserv a room</button>
             </div>
         </div>

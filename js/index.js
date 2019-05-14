@@ -176,7 +176,7 @@ function init() {
 
     function toogleMenu() {
         var ul = document.getElementById("main_navigation");
-        if (ul.style.display == "none") {
+        if (ul.style.display == "none" || ul.style.display == "") {
             ul.style.display = "block";
         } else {
             ul.style.display = "none";

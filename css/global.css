@@ -1319,7 +1319,19 @@ footer p {
     }
 
     h1 {
-        font-size: 26px;
+        font-size: 23px;
+    }
+
+    .ad_section h2 {
+        font-size: 27px;
+    }
+
+    input, select, .check_button {
+        width: 250px;
+    }
+
+    .featured_rooms .room_preview {
+        width: 300px;
     }
 
 
@@ -1331,16 +1343,17 @@ footer p {
     }  
 
     .menu_button {
-        left:0;
+        /* left:0; */
+        font-size: 13px;
     }
 
     .logo {
-        font-size: 16px;
+        font-size: 13px;
         margin-left: 25px;
     }
 
     input, select, .check_button {
-        width: 250px;
+        width: 230px;
     }
 
     /* .menu_wrapper {
@@ -1360,11 +1373,11 @@ footer p {
     }
     
     .sub_heading {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     h1 {
-        font-size: 40px;
+        font-size: 22px;
     }
 
     .room_preview {
@@ -1372,14 +1385,23 @@ footer p {
     }
 
     .menu_button {
-        font-size: 16px;
+        font-size: 13px;
         height: 20px;
-        top: 38px;
+        top: -3px;
+        position: relative;
     }
 
     .main_navigation li {
         display: block;
         margin-bottom: 10px;
+        font-size: 14px;
     }
 
+    .featured_rooms .room_preview {
+        width: 300px;
+    }
+    
+    .ad_section h2 {
+        font-size: 27px;
+    }
 }

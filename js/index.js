@@ -83,7 +83,7 @@ function init() {
             if (position > 0) {
                 --position
                 elem.parentElement.style.left = "-" + slideWidth * position + "px";
-                arrowsContainer.children[0].style.color = "gray"; 
+                arrowsContainer.children[1].style.color = "black"; 
             };
             if (position == 0) arrowsContainer.children[0].style.color = "gray"; 
         };

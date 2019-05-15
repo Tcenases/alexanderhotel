@@ -384,6 +384,11 @@ function init() {
             var steps = document.getElementsByClassName("step");
             steps[3].classList.add("completed_step");
             steps[3].classList.remove("current_step");
+            // window.sessionStorage.checkIN = ""
+            // window.sessionStorage.checkOUT = ""
+            // window.sessionStorage.children = ""
+            // window.sessionStorage.adults = ""
+            window.sessionStorage.flag = ""
         };
 
         document.getElementById("back_home").addEventListener("click", function() {window.location.assign("index.html");} );

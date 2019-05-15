@@ -1218,7 +1218,7 @@ footer p {
     }
 
     .menu_wrapper {
-        display: block;
+        display: flex;
         background-color: black;
         position: fixed;
         top: 0;

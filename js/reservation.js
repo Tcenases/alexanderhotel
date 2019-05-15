@@ -389,6 +389,8 @@ function init() {
         document.getElementById("back_home").addEventListener("click", function() {window.location.assign("index.html");} );
         document.getElementById("book_another").addEventListener("click", function() {window.location.assign("reservation.html");} );
 
+        
+
     };
 
 
@@ -401,11 +403,4 @@ function init() {
             ul.style.display = "none";
         };
     };
-
-    //develop-only
-    // secondStep();
-    // thirdStep();
-    // fourthStep();
-    
-
 };

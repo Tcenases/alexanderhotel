@@ -64,4 +64,15 @@ function init() {
         };
     };
 
+    document.getElementById("menu_button").addEventListener("click", toogleMenu);
+
+    function toogleMenu() {
+        var ul = document.getElementById("main_navigation");
+        if (ul.style.display == "none" || ul.style.display == "") {
+            ul.style.display = "block";
+        } else {
+            ul.style.display = "none";
+        };
+    };
+
 };

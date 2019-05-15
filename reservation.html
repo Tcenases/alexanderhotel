@@ -118,11 +118,11 @@
                         <label for="room_type">Room Type(optional)</label>
                         <select name="room_type" id="room_type">
                             <option value="all">All</option>
-                            <option value="bachelor">Bachelor</option>
-                            <option value="doubleRoom">Double Room</option>
-                            <option value="family">Family Room</option>
-                            <option value="vip">VIP Room</option>
-                            <option value="presidental">Presidental Room</option>
+                            <option value="Bachelor Room">Bachelor</option>
+                            <option value="Double Room">Double Room</option>
+                            <option value="Family Room">Family Room</option>
+                            <option value="VIP Room">VIP Room</option>
+                            <option value="Presidental Room">Presidental Room</option>
                         </select>
                     </div>
                     <div class="form_element">
@@ -139,6 +139,8 @@
     <section id="step2_action" class="step_actions">
         <div class="container">
             <h2 class="step_header">Choose Room</h2>
+            <h2 class="step_header">There are no rooms matching your criteria!</h2>
+            <button>Back Home</button>
             <!-- <div class="step_container"> -->
             <div id="rooms_overview" class="rooms_overview">
                 <!-- <div class="room_preview">
@@ -179,12 +181,17 @@
     <section id="step4_action" class="step_actions">
         <div class="container">
             <h2 class="step_header">Confirmation</h2>
-                <button id="confirm_button">Confirm</button>
+            <p>We have sent a confirmation code to your number +380954277001</p>
+            <input type="text">
+            <button id="confirm_button">Confirm</button>
         </div>
     </section>
     <section id="step5_action" class="step_actions">
         <div class="container">
             <h2 class="step_header">You have succsesfully booked a room!</h2>
+            <h2 class="step_header">You Reservation ID: 387565</h2>
+            <button>Back Home</button>
+            <button>Book another Room</button>
         </div>
     </section>
     <footer>

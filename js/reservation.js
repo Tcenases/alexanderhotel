@@ -145,39 +145,40 @@ function init() {
 
             var requestingPeopleNumber = +window.sessionStorage.adults + +window.sessionStorage.children;
 
-            if (window.sessionStorage.roomType != "all") {
-                for (var i = 0; i < data.length; i++) {
-                    if (data[i].category == window.sessionStorage.roomType) {
-                        filteredData.push(data[i])
-                    };
-                };
-            } else {
-                filteredData = data;
-            };
-
-            data = []
-
-            for (var i = 0; i < filteredData.length; i++) {
-               if (filteredData[i].maxPersons >= requestingPeopleNumber) {
-                    data.push(filteredData[i]);
-               };
-            };
-
-            filteredData = [];
-
             for (var i = 0; i < data.length; i++) {
-                var intersects = false;
-                for (y = 0; y < data[i].bookedPeriods.length; y++) {
-                    if ((window.sessionStorage.checkIN < data[i].bookedPeriods[y].checkIN && window.sessionStorage.checkOUT <= data[i].bookedPeriods[y].checkIN) || (window.sessionStorage.checkIN > data[i].bookedPeriods[y].checkOUT)) {
+                if (window.sessionStorage.roomType != "all") {
+                    if (data[i].category != window.sessionStorage.roomType) {
                         continue;
-                    } else {
-                        intersects = true;
                     };
                 };
-                if (!intersects) { 
-                    filteredData.push(data[i]); 
+                if (data[i].maxPersons >= requestingPeopleNumber) {
+                    var intersects = false;
+                    for (y = 0; y < data[i].bookedPeriods.length; y++) {
+                        if ((window.sessionStorage.checkIN < data[i].bookedPeriods[y].checkIN && window.sessionStorage.checkOUT <= data[i].bookedPeriods[y].checkIN) || (window.sessionStorage.checkIN > data[i].bookedPeriods[y].checkOUT)) {
+                            continue;
+                        } else {
+                            intersects = true;
+                        };
+                    };
+                    if (!intersects) { 
+                        filteredData.push(data[i]); 
+                    };
                 };
             };
+
+            // for (var i = 0; i < data.length; i++) {
+            //     var intersects = false;
+            //     for (y = 0; y < data[i].bookedPeriods.length; y++) {
+            //         if ((window.sessionStorage.checkIN < data[i].bookedPeriods[y].checkIN && window.sessionStorage.checkOUT <= data[i].bookedPeriods[y].checkIN) || (window.sessionStorage.checkIN > data[i].bookedPeriods[y].checkOUT)) {
+            //             continue;
+            //         } else {
+            //             intersects = true;
+            //         };
+            //     };
+            //     if (!intersects) { 
+            //         filteredData.push(data[i]); 
+            //     };
+            // };
 
             var container = document.getElementById("rooms_overview");
 
@@ -346,8 +347,10 @@ function init() {
         steps[3].classList.remove("current_step");
     };
 
-    // develop-only
-    secondStep();
-    thirdStep();
+    //develop-only
+    // secondStep();
+    // thirdStep();
+    // fourthStep();
+    
 
 };

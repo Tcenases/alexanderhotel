@@ -204,6 +204,7 @@ h1 {
     align-items: flex-end;
     top: 500px;
     right: 50px;
+    z-index: 15;
 }
 
 .position_bars {

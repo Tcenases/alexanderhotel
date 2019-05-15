@@ -2,7 +2,7 @@ var hotelRooms = [];
 
 var room1 = {};
 room1.name = null;
-room1.category = "Bachelor";
+room1.category = "Bachelor Room";
 room1.roomNumber = "101";
 room1.size = "20";
 room1.bedType = "One bed";

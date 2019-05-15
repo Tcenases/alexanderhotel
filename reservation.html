@@ -20,7 +20,7 @@
                 <a class="logo" href="index.html">Alexander</a>
                 <nav>
                     <button id="menu_button" class="menu_button">= MENU</button>
-                    <ul class="main_navigation">
+                    <ul id="main_navigation" class="main_navigation">
                         <li>
                             <a href="index.html">Home</a>
                         </li>
@@ -139,8 +139,8 @@
     <section id="step2_action" class="step_actions">
         <div class="container">
             <h2 class="step_header">Choose Room</h2>
-            <h2 class="step_header">There are no rooms matching your criteria!</h2>
-            <button>Back Home</button>
+            <h2 id="no_rooms_msg" class="step_header no_rooms">There are no rooms matching your criteria!</h2>
+            <button id="no_rooms_bttn" class="check_button no_rooms">Try other criteria</button>
             <!-- <div class="step_container"> -->
             <div id="rooms_overview" class="rooms_overview">
                 <!-- <div class="room_preview">
@@ -181,17 +181,21 @@
     <section id="step4_action" class="step_actions">
         <div class="container">
             <h2 class="step_header">Confirmation</h2>
-            <p>We have sent a confirmation code to your number +380954277001</p>
-            <input type="text">
-            <button id="confirm_button">Confirm</button>
+            <div class="conf_block">
+                <p>We have sent a confirmation code to your number <span id="span_tel">+380675552215</span>:</p>
+                <div>
+                    <input id="code" type="text">
+                    <button id="confirm_button" class="check_button">Confirm</button>
+                </div>
+            </div>
         </div>
     </section>
     <section id="step5_action" class="step_actions">
         <div class="container">
             <h2 class="step_header">You have succsesfully booked a room!</h2>
             <h2 class="step_header">You Reservation ID: 387565</h2>
-            <button>Back Home</button>
-            <button>Book another Room</button>
+            <button id="back_home" class="check_button">Back Home</button>
+            <button id="book_another" class="check_button">Book another Room</button>
         </div>
     </section>
     <footer>

@@ -218,7 +218,7 @@ function init() {
         window.sessionStorage.checkOUT = checkOUTinput.value;
         window.sessionStorage.adults = adults.value;
         window.sessionStorage.children = children.value;
-        window.sessionStorage.roomNumber = room.roomNumber;
+        window.sessionStorage.roomID = room.roomNumber;
         window.location.assign("reservation.html");
     };
 };

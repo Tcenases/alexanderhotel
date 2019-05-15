@@ -88,6 +88,9 @@ function init() {
 
     if (window.sessionStorage.flag == "index") {
         setTimeout(firstStep, 1000);
+    }
+    else if (window.sessionStorage.flag == "singleRoom") {
+        thirdStep();
     };
 
     function firstStep() {
@@ -108,7 +111,7 @@ function init() {
             window.sessionStorage.adults = adults.value;
             window.sessionStorage.children = children.value;
             window.sessionStorage.roomType = roomType.value;
-            window.sessionStorage.flag = "reservations";
+            //window.sessionStorage.flag = "reservations";
             scroll();
             setTimeout(secondStep, 750);
         };
@@ -121,6 +124,10 @@ function init() {
         steps[0].classList.add("completed_step");
         steps[0].classList.remove("current_step");
         steps[1].classList.add("current_step");
+
+        // if (window.sessionStorage.flag == "singleRoom") {
+        //     thirdStep();
+        // };
 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "server/data.json", true);
@@ -166,19 +173,25 @@ function init() {
                 };
             };
 
-            // for (var i = 0; i < data.length; i++) {
-            //     var intersects = false;
-            //     for (y = 0; y < data[i].bookedPeriods.length; y++) {
-            //         if ((window.sessionStorage.checkIN < data[i].bookedPeriods[y].checkIN && window.sessionStorage.checkOUT <= data[i].bookedPeriods[y].checkIN) || (window.sessionStorage.checkIN > data[i].bookedPeriods[y].checkOUT)) {
-            //             continue;
-            //         } else {
-            //             intersects = true;
-            //         };
-            //     };
-            //     if (!intersects) { 
-            //         filteredData.push(data[i]); 
-            //     };
-            // };
+            if (filteredData.length == 0) {
+                var noRoomsMsg = document.getElementById("no_rooms_msg");
+                var noRoomsBttn = document.getElementById("no_rooms_bttn");
+                noRoomsBttn.addEventListener("click", restartReservation);
+                noRoomsBttn.style.display = "block";
+                noRoomsMsg.style.display = "block";
+                steps[1].classList.add("failed_step");
+            }
+
+
+            function restartReservation() {
+                document.getElementById("step1_action").style.display = "block";
+                document.getElementById("step2_action").style.display = "none";
+                steps[1].classList.remove("current_step");
+                steps[1].classList.remove("failed_step");
+                steps[0].classList.add("current_step");
+                noRoomsBttn.style.display = "none";
+                noRoomsMsg.style.display = "none";
+            }
 
             var container = document.getElementById("rooms_overview");
 
@@ -214,11 +227,19 @@ function init() {
 
     function thirdStep() {
         //changing step_view
+        var steps = document.getElementsByClassName("step");
+        if (window.sessionStorage.flag == "singleRoom") {
+            document.getElementById("step1_action").style.display = "none";
+            steps[0].classList.add("completed_step");
+            steps[1].classList.add("completed_step");
+            steps[0].classList.remove("current_step");
+        };
+
         document.getElementById("step2_action").style.display = "none";
         document.getElementById("step3_action").style.display = "block";
-        var steps = document.getElementsByClassName("step");
         steps[1].classList.add("completed_step");
         steps[1].classList.remove("current_step");
+        steps[1].classList.remove("failed_step");
         steps[2].classList.add("current_step");
 
         // getting updated info from server
@@ -245,7 +266,7 @@ function init() {
 
         function continueReservation() {
             for (var i = 0; i < data.length; i++) {
-                if (window.sessionStorage.roomID.indexOf(data[i].roomNumber) > 0) {
+                if (window.sessionStorage.roomID.indexOf(data[i].roomNumber) >= 0) {
                     chosenIndex = i;
                 };
             };
@@ -289,12 +310,12 @@ function init() {
                 } else {
                     surname.classList.remove("invalid");
                 };
-                if (email.value == "") {
+                if (!validateEmail(email.value)) {
                     email.classList.add("invalid");
                 } else {
                     email.classList.remove("invalid");
                 };
-                if (tel.value == "") {
+                if (!validateTel(tel.value)) {
                     tel.classList.add("invalid");
                 } else {
                     tel.classList.remove("invalid");
@@ -319,6 +340,17 @@ function init() {
                     setTimeout(fourthStep, 750);
                 };
 
+
+                function validateEmail(email) {
+                    var emailRegExp = new RegExp(/\S+@\S+\.\S+/);
+                    return emailRegExp.test(email);
+                };
+
+                function validateTel(tel) {
+                    var telRegExp = new RegExp(/^[\+]?\d{2,}?[(]?\d{2,}[)]?[-\s\.]?\d{2,}?[-\s\.]?\d{2,}[-\s\.]?\d{0,9}$/im);
+                    return telRegExp.test(tel);
+                };
+
             };
 
         };
@@ -334,17 +366,40 @@ function init() {
         steps[2].classList.remove("current_step");
         steps[3].classList.add("current_step");
 
+        document.getElementById("span_tel").innerText = window.sessionStorage.tel;
+
         var b = document.getElementById("confirm_button");
         b.addEventListener("click", confirmed);
+        var code = document.getElementById("code");
+        code.addEventListener("focus", function() {code.classList.remove("invalid");})
 
     };
 
     function confirmed() {
-        document.getElementById("step4_action").style.display = "none";
-        document.getElementById("step5_action").style.display = "block";
-        var steps = document.getElementsByClassName("step");
-        steps[3].classList.add("completed_step");
-        steps[3].classList.remove("current_step");
+        if (code.value == "") {
+            code.classList.add("invalid");
+        } else {
+            document.getElementById("step4_action").style.display = "none";
+            document.getElementById("step5_action").style.display = "block";
+            var steps = document.getElementsByClassName("step");
+            steps[3].classList.add("completed_step");
+            steps[3].classList.remove("current_step");
+        };
+
+        document.getElementById("back_home").addEventListener("click", function() {window.location.assign("index.html");} );
+        document.getElementById("book_another").addEventListener("click", function() {window.location.assign("reservation.html");} );
+
+    };
+
+
+    document.getElementById("menu_button").addEventListener("click", toogleMenu);
+    function toogleMenu() {
+        var ul = document.getElementById("main_navigation");
+        if (ul.style.display == "none" || ul.style.display == "") {
+            ul.style.display = "block";
+        } else {
+            ul.style.display = "none";
+        };
     };
 
     //develop-only

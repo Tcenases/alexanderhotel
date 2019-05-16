@@ -106,6 +106,10 @@ body {
 
 }
 
+.main_navigation {
+    display: block;
+}
+
 .main_navigation li {
     display: inline-block;
     padding-right: 30px;
@@ -1218,7 +1222,6 @@ footer p {
     }
 
     .menu_wrapper {
-        display: flex;
         background-color: black;
         position: fixed;
         top: 0;
